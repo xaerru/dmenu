@@ -52,7 +52,7 @@ choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -i -l 20 -p 'Edit c
 # What to do when/if we choose a file to edit.
 if [ "$choice" ]; then
   cfg=$(printf '%s\n' "${options_clean["${choice}"]}")
-  $DMEDITOR "$cfg"
+  $TERMINAL --command $DMEDITOR "$cfg"
 
 # What to do if we just escape without choosing anything.
 else

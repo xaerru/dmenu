@@ -82,21 +82,21 @@ case $choice in
         ;;
     'Reboot')
         if [[ "$(echo -e "No\nYes" | dmenu -i -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            systemctl reboot
+            loginctl reboot
         else
             output "User chose not to reboot." && exit 0
         fi
         ;;
     'Shutdown')
         if [[ "$(echo -e "No\nYes" | dmenu -i -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            systemctl poweroff
+            loginctl poweroff
         else
             output "User chose not to shutdown." && exit 0
         fi
         ;;
     'Suspend')
         if [[ "$(echo -e "No\nYes" | dmenu -i -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            systemctl suspend
+            loginctl suspend
         else
             output "User chose not to suspend." && exit 0
         fi

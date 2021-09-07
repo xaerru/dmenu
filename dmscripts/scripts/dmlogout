@@ -96,7 +96,7 @@ case $choice in
         ;;
     'Suspend')
         if [[ "$(echo -e "No\nYes" | dmenu -i -p "${choice}?" "${@}" )" == "Yes" ]]; then
-            loginctl suspend
+            loginctl hybrid-sleep
         else
             output "User chose not to suspend." && exit 0
         fi
